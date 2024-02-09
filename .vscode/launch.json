@@ -1,0 +1,17 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Run tests in current file with CC",
+            "type": "PowerShell",
+            "request": "launch",
+            "script": "${workspaceFolder}/test.ps1",
+            "args": [
+                "-Path", "'${file}'",
+                "-Output", "${config:powershell.pester.debugOutputVerbosity}",
+                "-CodeCoverage",
+            ],
+            "cwd": "${file}",
+        }
+    ]
+}
