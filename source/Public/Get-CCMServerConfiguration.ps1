@@ -6,5 +6,5 @@ function Get-CCMServerConfiguration {
         .Example
             Get-CCMServerConfiguration | Connect-CCMServer
     #>
-    Import-Configuration -CompanyName CCMjr -Name Ccm
+    Import-Configuration -CompanyName jpruskin -Name CCMjr
 }

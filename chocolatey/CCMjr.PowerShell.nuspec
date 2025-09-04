@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter
+enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>ccmjr.powershell</id>
+    <version>$version$</version>
+    <owners>jpruskin</owners>
+    <title>CCMjr</title>
+    <authors>jpruskin</authors>
+    <projectUrl>https://github.com/jpruskin/CCMjr</projectUrl>
+    <licenseUrl>https://github.com/jpruskin/CCMjr/blob/main/LICENSE.md</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <projectSourceUrl>https://github.com/jpruskin/CCMjr/</projectSourceUrl>
+    <packageSourceUrl>https://github.com/jpruskin/CCMjr/tree/main/chocolatey</packageSourceUrl>
+    <bugTrackerUrl>https://github.com/jpruskin/CCMjr/issues</bugTrackerUrl>
+    <tags>powershell module chocolateycentralmanagement</tags>
+    <summary>A PowerShell module written to give the basics of interacting with the CCM REST API.</summary>
+    <releaseNotes>https://github.com/JPRuskin/CCMjr/releases</releaseNotes>
+    <description><![CDATA[
+A PowerShell module containing functions written to give the basics of interacting with the CCM REST API.
+    ]]></description>
+      <dependencies>
+        <dependency />
+      </dependencies>
+    </metadata>
+    <files>
+      <file src="*.ps1" target="tools" />
+      <file src="..\$version$\**" target="tools\CCMjr\$version$" />
+    </files>
+</package>

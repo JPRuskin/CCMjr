@@ -3,22 +3,30 @@ function Set-CCMServerConfiguration {
         .Synopsis
             Sets the configuration for the CCM Server for use in other sessions.
 
+        .Description
+            Stores configuration for the Chocolatey Central Management server specified for use in future sessions.
+
         .Example
-            Set-CCMServerConfiguration -HostName ccm.ch0.co -Credential ccmadmin
+            Set-CCMServerConfiguration -CentralManagementUri https://ccm.ch0.co:244 -Credential ccmadmin
+
+            # Prompts the user for a password and sets the configuration based on the passed values.
     #>
     [CmdletBinding()]
     param(
         [Parameter(Mandatory, Position = 0)]
-        [string]$HostName,
+        [string]$CentralManagementUri,
 
         [Parameter(Mandatory, Position = 1)]
-        [System.Management.Automation.PSCredential]$Credential
+        [System.Management.Automation.PSCredential]$Credential,
+
+        [Parameter(DontShow)]
+        [ValidateSet("User", "Machine")]
+        [string]$Scope = "User"
     )
     end {
         @{
-            HostName   = $HostName
+            CentralManagementUri = $CentralManagementUri
             Credential = $Credential
-        } | Export-Configuration -Scope User -CompanyName CCMJr -Name CCM
-        # This uses DPAPI for the credential, so there's little point going further than User scope
+        } | Export-Configuration -CompanyName jpruskin -Name CCMjr -Scope $Scope
     }
 }
